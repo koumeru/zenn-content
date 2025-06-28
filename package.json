@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "prismjs": "^1.30.0",
     "zenn-cli": "^0.1.162"
   }
 }
