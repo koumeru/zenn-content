@@ -15,8 +15,8 @@ Gitを使うにあたって、コミットするときにどうしたらわか�
 読んでみるとおおまかなイメージがつかめる。
 https://zenn.dev/miz_dev/articles/how-to-write-git-commit-messages
 
-## AIの解答
-次にAIの解答を見てみた。
+## AIの回答
+次にAIの回答を見てみた。
 なるほど、こちらも概要をつかむのにはわかりやすい。
 <!-- ここからトグル -->
 :::details AIさんに聞いていみると、以下のような答えが返ってきた
@@ -72,23 +72,51 @@ feat: ユーザー登録機能の実装
 <!-- トグル　ここから -->
 :::details 使用方法
 以下のコマンドでインストールできる
-```md
+```bash
 npm i -g gitmoji-cli
 ```
-僕の環境だと上記のコマンドでは権限がないとエラーがでたので、sudoオプションを付けて実行
-```md
+僕の環境だと上記のコマンドでは権限がないとエラーがでたので、`sudoオプション`を付けて実行
+```bash
 sudo npm i -g gitmoji-cli
 ```
 インストールされているか、確認
+```bash
+gitmoji -v
 ```
-kou@DESKTOP-CO8OH4O:~/zenn/zenn-content$ gitmoji -v
-9.7.0
-```
-無事にインストールできたみたいなので、さっそく使ってみる。
+バージョンが表示されて、無事にインストールできたみたいなので、さっそく使ってみる。
 実際に使うときは`git commit`としているところを`gitmoji -c`にするらしい。
-```md
-git commit -c
+```bash
+gitmoji -c
+```
+実際に入力すると、絵文字を選択できるようになる
+CLIから入力できるのでそれで探すのが良さそう。
+今回は`feat`と入力して該当するものを選択。
+```bash
+✔ Gitmojis fetched successfully, these are the new emojis:
+? Choose a gitmoji: (Use arrow keys or type to search)
+❯ 🎨  - Improve structure / format of the code. 
+  ⚡️  - Improve performance. 
+  🔥  - Remove code or files. 
+  🐛  - Fix a bug. 
+  🚑️  - Critical hotfix. 
+  ✨  - Introduce new features. 
+  📝  - Add or update documentation. 
+(Move up and down to reveal more choices)
+```
+絵文字を選択するとタイトルを入力できるようになる。
+今回は下記のような感じで入力。
+```bash
+? Enter the commit title [31/48]: Feat: #7 
+記事の新規作成（コミットメッセージの書き方）
+```
+
+次に、コミットメッセージの詳細を入力できるようになる。
+今回は必要ないので省略。
+```bash
+? Enter the commit message: 
+```
 :::
+<!-- トグル　ここまで -->
 
 ## 結論
 結論としてはこれからのコミットメッセージは以下のようなテンプレで記述するように気を付けようと思う。
@@ -98,10 +126,10 @@ git commit -c
 ```
 この記事のコミットメッセージだと以下のようになるだろうか。
 ```md:この記事での例
-add: #1 記事の新規作成（コミットメッセージの書き方）
+(gitmoji)feat: #1 記事の新規作成（コミットメッセージの書き方）
 ```
 - **gitmoji（任意）**:コミット内容を視覚的に表す絵文字。
-- **Prefix**:コミットの種類を表すキーワード。上記例の`add`にあたる。
+- **Prefix**:コミットの種類を表すキーワード。上記例の`feat`にあたる。
 - **スコープ（任意）**：影響する範囲。特定のコンポーネント、モジュール、ファイルなど。上記例では省略。
 - **IssureNumber**:何個目のコミットメッセージであるか。上記例の`#1`にあたる。
 - **概要**:簡潔に内容を伝える。上記例の`「コミットメッセージの書き方」記事の作成`にあたる。
