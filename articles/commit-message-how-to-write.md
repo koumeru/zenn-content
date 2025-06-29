@@ -96,7 +96,7 @@ CLIから入力できるのでそれで探すのが良さそう。
 ? Choose a gitmoji: (Use arrow keys or type to search)
 ❯ 🎨  - Improve structure / format of the code. 
   ⚡️  - Improve performance. 
-  🔥  - Remove code or files. 
+  🔥  - Remove code or files. Add commentMore actions
   🐛  - Fix a bug. 
   🚑️  - Critical hotfix. 
   ✨  - Introduce new features. 
@@ -116,7 +116,7 @@ CLIから入力できるのでそれで探すのが良さそう。
 ? Enter the commit message: 
 ```
 :::
-<!-- トグル　ここまで -->
+
 
 ## 結論
 結論としてはこれからのコミットメッセージは以下のようなテンプレで記述するように気を付けようと思う。
